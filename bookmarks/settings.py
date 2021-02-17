@@ -159,3 +159,10 @@ SOCIAL_AUTH_TWITTER_SECRET = '1w46845biyv0oTxnX16aDD9VX3Dwgee8xOljJCa4SxlvRwG9Gl
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '363636395789-naqhe33djqieagovektqel9455q5k805.apps.googleusercontent.com' # Google Consumer Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'U0DZ3PXEGUafzDfYbSJ-r1Mx' # Google Consumer Secret
+
+from django.urls import reverse_lazy
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail',
+                                        args=[u.username])
+}
