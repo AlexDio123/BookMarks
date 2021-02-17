@@ -15,6 +15,7 @@ from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditFor
 from .models import Profile, Contact
 
 from actions.utils import create_action
+from actions.models import Action
 
 
 # Create your views here.
@@ -44,9 +45,17 @@ def user_login(request):
 
 @login_required
 def dashboard(request):
+    #display all actions by default
+    actions = Action.objects.exclude(user=request.user)
+    following_ids = request.user.following.values_list('id', flat=True)
+
+    if following_ids:
+        # if user is following others, retrieve only their actions
+        actions = actions.filter(user_id_in=following_ids)
+    actions = actions[:10]
     return render(request,
                     'account/dashboard.html',
-                    {'section':'dashboard'})
+                    {'section':'dashboard', 'actions':actions})
 
 
 def register(request):
