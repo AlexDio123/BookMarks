@@ -7,10 +7,10 @@ before running locally the project make sure to have created and activated a pyt
 
 - run the command: **pip install requirements.txt**
 - edit your local file etcs/hosts and add the line: 127.0.0.1 **mysite.com**
-- make sure you have [redis](https://redis.io/) installed and running on your device
+- make sure you have [redis](https://redis.io/) installed and running on your device.
 - run the command: **python manage.py runserver_plus --cert-file cert.crt**
 
-this should be enough to run the project
+this should be enough to run the project.
 
 # Features
 
