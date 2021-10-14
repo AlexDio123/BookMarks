@@ -3,7 +3,7 @@ Social media app that allows users to share images that they find on the interne
 
 # Installation
 
-before running locally the project make sure to have created and activated a python virtual enviroment, you can see hoe to do that [here.](https://docs.python.org/3/tutorial/venv.html) once you've done with that follow this steps:
+before running locally the project make sure to have created and activated a python virtual enviroment, you can see hoe to do that [here.](https://docs.python.org/3/tutorial/venv.html) once you're done with that follow this steps:
 
 - run the command: **pip install requirements.txt**
 - edit your local file etcs/hosts and add the line: 127.0.0.1 **mysite.com**
